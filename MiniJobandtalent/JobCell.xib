@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="98" id="taw-0W-Ki2" customClass="JobCell" customModule="MiniJobandtalent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="taw-0W-Ki2" id="EUS-zR-vU9">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDS-6u-N5u">
+                        <rect key="frame" x="20" y="8" width="42" height="82"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIg-G3-Umv">
+                        <rect key="frame" x="354" y="34" width="40" height="30"/>
+                        <state key="normal" title="Apply"/>
+                        <connections>
+                            <action selector="applyButtonTapped:" destination="taw-0W-Ki2" eventType="touchUpInside" id="via-wn-5sJ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EDS-6u-N5u" firstAttribute="centerY" secondItem="EUS-zR-vU9" secondAttribute="centerY" id="4Z5-sM-o15"/>
+                    <constraint firstItem="MIg-G3-Umv" firstAttribute="centerY" secondItem="EDS-6u-N5u" secondAttribute="centerY" id="9wI-sw-M4S"/>
+                    <constraint firstItem="EDS-6u-N5u" firstAttribute="leading" secondItem="EUS-zR-vU9" secondAttribute="leading" constant="20" id="DNE-ZZ-Ezr"/>
+                    <constraint firstItem="MIg-G3-Umv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EDS-6u-N5u" secondAttribute="trailing" constant="10" id="Ebj-zH-ceQ"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EDS-6u-N5u" secondAttribute="bottom" constant="8" id="WFd-dY-34V"/>
+                    <constraint firstAttribute="trailing" secondItem="MIg-G3-Umv" secondAttribute="trailing" constant="20" id="cZf-a2-DPb"/>
+                    <constraint firstItem="EDS-6u-N5u" firstAttribute="top" secondItem="EUS-zR-vU9" secondAttribute="top" constant="8" id="k0T-CB-54m"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="applyButton" destination="MIg-G3-Umv" id="di7-b8-I8G"/>
+                <outlet property="jobTitleLabel" destination="EDS-6u-N5u" id="Wsh-yW-3Re"/>
+            </connections>
+            <point key="canvasLocation" x="-57.971014492753625" y="170.75892857142856"/>
+        </tableViewCell>
+    </objects>
+</document>

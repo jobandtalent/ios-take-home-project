@@ -1,0 +1,86 @@
+{
+    "jobs": [
+        {
+            "id": 1,
+            "title": "Electrical Installers and Repairers"
+        },
+        {
+            "id": 2,
+            "title": "Aircraft Mechanics and Service Techs"
+        },
+        {
+            "id": 3,
+            "title": "Transportation Inspectors"
+        },
+        {
+            "id": 4,
+            "title": "Pile Driver Operators"
+        },
+        {
+            "id": 5,
+            "title": "Petroleum Pump System Operators"
+        },
+        {
+            "id": 6,
+            "title": "Construction and Building Inspectors"
+        },
+        {
+            "id": 7,
+            "title": "Telecommunications Equipment Installer"
+        },
+        {
+            "id": 8,
+            "title": "Powerhouse Substation and Relay Repairer"
+        },
+        {
+            "id": 9,
+            "title": "Power Plant Operator"
+        },
+        {
+            "id": 10,
+            "title": "Subway And Streetcar Operators"
+        }
+    ],
+    "applicants": [
+        {
+            "id": 4,
+            "applicants": 89
+        },
+        {
+            "id": 7,
+            "applicants": 57
+        },
+        {
+            "id": 2,
+            "applicants": 4
+        },
+        {
+            "id": 3,
+            "applicants": 60
+        },
+        {
+            "id": 9,
+            "applicants": 5
+        },
+        {
+            "id": 5,
+            "applicants": 65
+        },
+        {
+            "id": 6,
+            "applicants": 3
+        },
+        {
+            "id": 8,
+            "applicants": 12
+        },
+        {
+            "id": 10,
+            "applicants": 33
+        },
+        {
+            "id": 1,
+            "applicants": 10
+        }
+    ]
+}
