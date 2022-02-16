@@ -1,4 +1,20 @@
+
+Make sure to do all the work in a private repository and invite mobile-ios@jobandtalent.com once finished.
+
+```bash
+git clone git@github.com:jobandtalent/ios-take-home-project.git
+cd ios-take-home-project
+git remote set-url origin git@github.com:<your-private-repo>.git
+git push
+```
+
+_In case of questions, feel free to contact mobile-ios@jobandtalent.com_.
+
+---
+
 The _MiniJobandtalent_ app consists of a simple list of jobs that you can apply to. The project code quality is far from ideal, and it’s your responsibility to fix it. Each step must be accomplished via a single commit, whose body must provide further explanations about each of the changes.
+
+It's recommended that you read all the steps before starting. We really value, for reviewing purposes, that you stick to what it's asked for in each task. There is room for you to show off in the two final steps.
 
 _Before executing the app, you must run the underlying server providing the static JSON data._
 
@@ -24,16 +40,3 @@ json-server minijobandtalent.json --port 8000
 15. `JobListViewController` is currently pushing `JobDetailViewController` on top of the navigation stack. What are the disadvantages of that approach? Provide a better API and future-proof solution to handle navigation more robustly.
 16. Apply further cleanup so that you feel the code is production-ready. Move things around and apply the architecture you feel more comfortable with.
 17. Add enough testing to be confident applying changes to your code.
-
----
-
-Make sure to do all the work in a private repository and invite mobile-ios@jobandtalent.com once finished.
-
-```bash
-git clone git@github.com:jobandtalent/ios-take-home-project.git
-cd ios-take-home-project
-git remote set-url origin git@github.com:<your-private-repo>.git
-git push
-```
-
-_In case of questions, feel free to contact mobile-ios@jobandtalent.com_.
