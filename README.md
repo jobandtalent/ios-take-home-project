@@ -1,5 +1,9 @@
 
-Make sure to do all the work in a private repository and invite mobile-ios@jobandtalent.com once finished.
+Make sure to do all the work in a private repository and, once finished, invite the following people:
+
+https://github.com/broomburgo
+
+https://github.com/nandodelauni
 
 ```bash
 git clone git@github.com:jobandtalent/ios-take-home-project.git
