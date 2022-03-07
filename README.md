@@ -53,9 +53,10 @@ Feel free to add `@escaping` where required.
 12. Extend `URLSession` API to return `AsyncResult` instead of providing completion handlers.
 13. Implement a function like the following:
 ```swift
-func addName<T1, T2, E: Error>(_ first: AsyncResult<T1, E>, _ second: AsyncResult<T2, E>) -> AsyncResult<(T1, T2), E>
+func chooseSomeName<T1, T2, E: Error>(_ first: AsyncResult<T1, E>, _ second: AsyncResult<T2, E>) -> AsyncResult<(T1, T2), E>
 ```
 Use it to compute the information needed for the list screen to be rendered (the list of jobs and the number of applicants). __How would you name this function?__
+
 14. By using the previous `AsyncResult` type, change the _apply_ action to be an asynchronous operation that takes one second to complete and can never fail.
 15. `JobListViewController` is currently pushing `JobDetailViewController` on top of the navigation stack. What are the disadvantages of that approach? Provide a better API and future-proof solution to handle navigation more robustly.
 16. Apply further cleanup so that you feel the code is production-ready. Move things around and apply the architecture you feel more comfortable with.
