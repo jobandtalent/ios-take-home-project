@@ -42,6 +42,7 @@ json-server minijobandtalent.json --port 8000
 The main functions on `AsyncResult<T, E: Error>` should have these signatures:
 ```swift
 // within the definition of `AsyncResult<T, E: Error>`
+
 init(_ run: ((Result<T, E>) -> Void) -> Void) {}
 
 func map<U>(_ transform: (T) -> U) -> AsyncResult<U, E> {}
