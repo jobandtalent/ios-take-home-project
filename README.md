@@ -16,9 +16,9 @@ _In case of questions, feel free to contact mobile-ios@jobandtalent.com_.
 
 ---
 
-The _MiniJobandtalent_ app consists of a simple list of jobs that you can apply to. The project code quality is far from ideal, and it’s your responsibility to fix it. Each step must be accomplished via a single commit, whose body must provide further explanations about each of the changes.
+The _MiniJobandtalent_ app consists of a simple list of jobs that you can apply to. The project code quality is far from ideal, and it’s your responsibility to fix it. __Each step must be accomplished via a single commit__, whose message must provide further explanations about the changes: we will review the project commit-by-commit, and will use the commit message as a guide to the code, so we expect that each commit message contains __the number of the task__ and a description of the code that was added, removed or modified.
 
-It's recommended that you read all the steps before starting. We really value, for reviewing purposes, that you stick to what it's asked for in each task. There is room for you to show off in the two final steps.
+It's recommended that you read all the steps before starting. We really value, for reviewing purposes, that __you stick to what it's asked for in each task__: there is __room for you to show off__ in the two final steps, where you'll be able to apply a particular architecture to the project, if you want.
 
 _Before executing the app, you must run the underlying server providing the static JSON data._
 
@@ -38,8 +38,24 @@ json-server minijobandtalent.json --port 8000
 9. Make the aforementioned _applicants_ change when applying for a job.
 10. `URLSessionDataTask` API provides the following completion handler: `(Data?, URLResponse?, Error?) -> Void)`. Can you see any problems with that handler input? Can you extend URLSession to provide a more typed-correct version?
 11. Having types wrapping functions (like completion handlers) has great advantages, like allowing to provide some high-level constructions like `map` or `flatMap`. Create a new container type `AsyncResult<T, E: Error>` that wraps a function like `((Result<T, E>) -> Void) -> Void` and notifies you in case of success or failure. Implement `map` and `flatMap`.
+
+The main functions on `AsyncResult<T, E: Error>` should have these signatures:
+```swift
+// within the definition of `AsyncResult<T, E: Error>`
+init(_ run: ((Result<T, E>) -> Void) -> Void) {}
+
+func map<U>(_ transform: (T) -> U) -> AsyncResult<U, E> {}
+
+func flatMap<U>(_ transform: (T) -> AsyncResult<U, E>) -> AsyncResult<U, E> {}
+```
+Feel free to add `@escaping` where required.
+
 12. Extend `URLSession` API to return `AsyncResult` instead of providing completion handlers.
-13. Implement a function like `(AsyncResult<T1, E>, AsyncResult<T2, E>) -> AsyncResult<(T1, T2), E>`. Use it to compute the information needed for the list screen to be rendered (the list of jobs and the number of applicants). How would you name this function?
+13. Implement a function like the following:
+```swift
+func addName<T1, T2, E: Error>(_ first: AsyncResult<T1, E>, _ second: AsyncResult<T2, E>) -> AsyncResult<(T1, T2), E>
+```
+Use it to compute the information needed for the list screen to be rendered (the list of jobs and the number of applicants). __How would you name this function?__
 14. By using the previous `AsyncResult` type, change the _apply_ action to be an asynchronous operation that takes one second to complete and can never fail.
 15. `JobListViewController` is currently pushing `JobDetailViewController` on top of the navigation stack. What are the disadvantages of that approach? Provide a better API and future-proof solution to handle navigation more robustly.
 16. Apply further cleanup so that you feel the code is production-ready. Move things around and apply the architecture you feel more comfortable with.
