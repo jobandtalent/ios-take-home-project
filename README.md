@@ -1,11 +1,11 @@
 
 Make sure to do all the work in a private repository and, once finished, invite the following people:
 
-https://github.com/broomburgo
-https://github.com/dani-mendez
-https://github.com/andrearori
-https://github.com/rico-crescenzio
-https://github.com/lucaangeletti-jobandtalent
+- https://github.com/broomburgo
+- https://github.com/dani-mendez
+- https://github.com/andrearori
+- https://github.com/rico-crescenzio
+- https://github.com/lucaangeletti-jobandtalent
 
 ```bash
 git clone git@github.com:jobandtalent/ios-take-home-project.git
