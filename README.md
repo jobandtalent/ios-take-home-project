@@ -3,8 +3,6 @@ Make sure to do all the work in a private repository and, once finished, invite 
 
 - https://github.com/broomburgo
 - https://github.com/dani-mendez
-- https://github.com/andrearori
-- https://github.com/rico-crescenzio
 - https://github.com/lucaangeletti-jobandtalent
 
 ```bash
