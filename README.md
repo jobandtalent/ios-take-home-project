@@ -4,6 +4,7 @@ Make sure to do all the work in a private repository and, once finished, invite 
 - https://github.com/broomburgo
 - https://github.com/dani-mendez
 - https://github.com/lucaangeletti-jobandtalent
+- https://github.com/molmedo-jt
 
 ```bash
 git clone git@github.com:jobandtalent/ios-take-home-project.git
@@ -22,15 +23,15 @@ It's recommended that you read all the steps before starting. We really value, f
 
 _Before executing the app, you must run the underlying server providing the static JSON data._
 
-```bash
+```zsh
 npm install -g json-server
-json-server minijobandtalent.json --port 8000
+json-server Minijobandtalent.json --port 8000
 ```
 
 1. The app crashes on startup. Figure out why and fix it.
 2. Fix the layout bug happening when applying to the first job.
 3. Can you discover the retain cycle hidden inside `JobListViewController`? Could you fix it?
-4. Include any feedback inside `JobListViewController` while the information is retrieved.
+4. Include some visual feedback inside `JobListViewController` while the information is loading.
 5. `JobCell` notifies via `NotificationCenter` when applying to a job. What problems can you see with this solution? Implement a better one to propagate state changes using the current reference semantics.
 6. `JobListViewController` relies on lifecycle methods like `viewWillAppear` to reflect the changes made in the detail view when coming back to the list. Come up with a different solution, so the list is refreshed instantly and reactively whenever a job is applied.
 7. Change `Job` to be a value type without modifying the current app behavior. What are the main advantages and disadvantages of using value semantics for this case?
@@ -51,6 +52,8 @@ func flatMap<U>(_ transform: (T) -> AsyncResult<U, E>) -> AsyncResult<U, E> {}
 ```
 Feel free to add `@escaping` where required.
 
+__Please Note__: the requirement is __not__ to create a function with return type `async -> Result<Success, Failure>`; we expect you to define an entirely new `AsyncResult<T, E: Error>` type that handles asynchronous code __internally__.
+
 12. Extend `URLSession` API to return `AsyncResult` instead of providing completion handlers.
 13. Implement a function like the following:
 ```swift
@@ -58,7 +61,7 @@ func chooseSomeName<T1, T2, E: Error>(_ first: AsyncResult<T1, E>, _ second: Asy
 ```
 Use it to compute the information needed for the list screen to be rendered (the list of jobs and the number of applicants). __How would you name this function?__
 
-14. By using the previous `AsyncResult` type, change the _apply_ action to be an asynchronous operation that takes one second to complete and can never fail.
-15. `JobListViewController` is currently pushing `JobDetailViewController` on top of the navigation stack. What are the disadvantages of that approach? Provide a better API and future-proof solution to handle navigation more robustly.
+14. Extend the previous `AsyncResult` type with a `delay` function, and use it to change the _apply_ action to be an asynchronous operation that takes one second to complete and can never fail.
+15. `JobListViewController` is currently pushing `JobDetailViewController` on top of the navigation stack. What are the disadvantages of that approach? Provide a better API and future-proof solution to handle navigation more robustly, and to remove the direct navigation responsibility from `JobDetailViewController`.
 16. Apply further cleanup so that you feel the code is production-ready. Move things around and apply the architecture you feel more comfortable with.
-17. Add enough testing to be confident applying changes to your code.
+17. Add enough testing to be able to apply changes to your code with confidence.
